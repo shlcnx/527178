@@ -1,23 +1,65 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Aurora | 星空漫游</title>
+    <title>渐变花瓣</title>
     <style>
         body {
-            background: #000;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             overflow: hidden;
         }
-        .aurora {
+        .petal {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: float linear infinite;
+            transform-origin: center;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(-10%) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="aurora"></div>
-    <!-- WebGL实现的极光效果 -->
+    <script>
+        const colors = ['#ffb6c1', '#ffcce6', '#ff99cc', '#ff6699'];
+        
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            
+            const size = Math.random() * 20 + 10;
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size}px`;
+            petal.style.left = `${Math.random() * window.innerWidth}px`;
+            petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+            petal.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            petal.style.animationDelay = `${Math.random() * 5}s`;
+            
+            document.body.appendChild(petal);
+            
+            petal.addEventListener('animationend', () => {
+                petal.remove();
+            });
+        }
+        
+        for(let i=0; i<50; i++) {
+            setTimeout(createPetal, i * 300);
+        }
+    </script>
 </body>
 </html>
