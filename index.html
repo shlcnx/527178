@@ -1,62 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 同index.html的head部分 -->
+    <meta charset="UTF-8">
+    <title>墨韵 | 个人主页</title>
+    <style>
+        body {
+            background: url('ink-wash.jpg') no-repeat center/cover;
+            font-family: 'STXingkai', cursive;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #8b4513;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            -webkit-text-stroke: 1px #8b4513;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-900">
-    <div id="particles-js"></div>
-    
-    <div class="container mx-auto px-4 py-16 relative z-10">
-        <!-- 导航栏（同首页） -->
-        
-        <div class="max-w-4xl mx-auto bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl animate-on-scroll">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">关于<span class="text-pink-300">我</span></h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="col-span-2">
-                    <p class="text-purple-100 mb-6 leading-relaxed">我是星辰，一名充满激情的前端开发者和数字艺术家...</p>
-                    
-                    <div class="mb-8">
-                        <h3 class="text-xl font-semibold text-pink-300 mb-4">技能</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-purple-200">HTML/CSS</span>
-                                    <span class="text-purple-200">95%</span>
-                                </div>
-                                <div class="w-full bg-purple-800 rounded-full h-2">
-                                    <div class="bg-pink-500 h-2 rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <!-- 更多技能条 -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-6">
-                    <div class="bg-purple-800 bg-opacity-50 p-6 rounded-xl">
-                        <h4 class="text-lg font-semibold text-white mb-3">基本信息</h4>
-                        <ul class="space-y-2 text-purple-100">
-                            <li><i class="fas fa-user mr-2 text-pink-300"></i> 星辰</li>
-                            <li><i class="fas fa-birthday-cake mr-2 text-pink-300"></i> 1995年10月12日</li>
-                            <li><i class="fas fa-map-marker-alt mr-2 text-pink-300"></i> 上海, 中国</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-purple-800 bg-opacity-50 p-6 rounded-xl">
-                        <h4 class="text-lg font-semibold text-white mb-3">教育背景</h4>
-                        <div class="text-purple-100">
-                            <p class="font-medium">数字媒体艺术 硕士</p>
-                            <p class="text-sm opacity-80">中央美术学院 | 2018-2021</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+    <div class="container">
+        <h1>墨韵</h1>
+        <p>用代码诠释东方美学</p>
+        <!-- 山水画背景+书法字体 -->
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
