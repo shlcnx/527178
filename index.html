@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗意栖居</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://picsum.photos/1600/900?nature') center/cover no-repeat;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg shadow-sm fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">诗意栖居</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-pink-500 transition">首页</a>
+                    <a href="#" class="text-gray-700 hover:text-pink-500 transition">诗选</a>
+                    <a href="#" class="text-gray-700 hover:text-pink-500 transition">散文</a>
+                    <a href="#" class="text-gray-700 hover:text-pink-500 transition">关于</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
+        <div class="px-4 max-w-4xl mx-auto fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">在文字中寻找心灵的栖息地</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">让优美的文字如清泉般滋润你的心田</p>
+            <button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full transition transform hover:scale-105">
+                开始阅读
+            </button>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="max-w-6xl mx-auto px-4 py-16">
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">精选作品</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 卡片1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="https://picsum.photos/600/400?poem" alt="诗歌书籍封面" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">《春夜喜雨》</h3>
+                        <p class="text-gray-600 mb-4">好雨知时节，当春乃发生。随风潜入夜，润物细无声。</p>
+                        <a href="#" class="text-pink-500 hover:text-pink-600 font-medium inline-flex items-center">
+                            阅读全文 <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 卡片2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="https://picsum.photos/600/400?prose" alt="散文书籍封面" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">《荷塘月色》</h3>
+                        <p class="text-gray-600 mb-4">曲曲折折的荷塘上面，弥望的是田田的叶子。叶子出水很高，像亭亭的舞女的裙。</p>
+                        <a href="#" class="text-pink-500 hover:text-pink-600 font-medium inline-flex items-center">
+                            阅读全文 <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 卡片3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                    <img src="https://picsum.photos/600/400?classic" alt="古典文学封面" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">《红楼梦》</h3>
+                        <p class="text-gray-600 mb-4">满纸荒唐言，一把辛酸泪。都云作者痴，谁解其中味？</p>
+                        <a href="#" class="text-pink-500 hover:text-pink-600 font-medium inline-flex items-center">
+                            阅读全文 <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特色区域 -->
+        <section class="mb-20 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 md:p-12">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">每日一诗</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">每天为您精选一首经典诗词，让诗意融入生活的每一天。在繁忙的都市生活中，寻找一片心灵的净土。</p>
+                    <button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-full transition">
+                        订阅推送
+                    </button>
+                </div>
+                <div class="md:w-1/2 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">今日推荐</h3>
+                    <p class="text-gray-700 italic text-center mb-4">"山有木兮木有枝，心悦君兮君不知。"</p>
+                    <p class="text-gray-600 text-center">——《越人歌》</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作者介绍 -->
+        <section>
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">文学名家</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex items-center bg-white rounded-xl p-6 shadow-sm">
+                    <img src="https://picsum.photos/200/200?author1" alt="李白肖像" class="w-24 h-24 rounded-full object-cover mr-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-1 text-gray-800">李白</h3>
+                        <p class="text-gray-600 mb-2">唐代伟大的浪漫主义诗人</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">诗仙</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">浪漫主义</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center bg-white rounded-xl p-6 shadow-sm">
+                    <img src="https://picsum.photos/200/200?author2" alt="苏轼肖像" class="w-24 h-24 rounded-full object-cover mr-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-1 text-gray-800">苏轼</h3>
+                        <p class="text-gray-600 mb-2">宋代文学全才</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">豪放派</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">词人</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">诗意栖居</h3>
+                    <p class="text-gray-400">传播经典文学，分享优美文字，让心灵在诗意的世界中栖息。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">首页</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">诗选</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">散文</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">关于我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">联系我们</h3>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                        <span class="text-gray-400">contact@shiyi.com</span>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-weixin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-weibo text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 诗意栖居. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的淡入动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, 100);
+            });
+            
+            // 滚动时导航栏效果
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-md');
+                    nav.classList.remove('shadow-sm');
+                } else {
+                    nav.classList.add('shadow-sm');
+                    nav.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
