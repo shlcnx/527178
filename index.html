@@ -1,133 +1,795 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>代理北京地区用友软件</title>
-    <style>
-        body {
-	background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-	overflow: hidden;
-	background-color: #CCCCCC;
-        }
-        .petal {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            filter: blur(1px);
-            animation: float linear infinite;
-            transform-origin: center;
-        }
-        @keyframes float {
-            0% {
-                transform: translateY(-10%) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-.STYLE8 {
-	font-family: "新宋体";
-	color: #0033FF;
-	font-size: 24px;
-}
-.STYLE11 {
-	font-size: 18px;
-	color: #FF0000;
-}
-    .STYLE12 {
-	font-family: "新宋体";
-	color: #FFFF00;
-	font-size: 36px;
-	font-weight: bold;
-}
-    .STYLE14 {
-	font-family: "新宋体";
-	color: #0033FF;
-}
-    .STYLE15 {
-	color: #FF0000;
-	font-weight: bold;
-}
-    .STYLE17 {font-size: 18px; color: #FF0000; font-weight: bold; }
-.STYLE19 {color: #3399FF}
-    </style>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
-<body>
 
-<p>
-  <script>const colors = ['#ffb6c1', '#ffcce6', '#ff99cc', '#ff6699'];
-        
-        function createPetal() {
-            const petal = document.createElement('div');
-            petal.className = 'petal';
-            
-            const size = Math.random() * 20 + 10;
-            petal.style.width = `${size}px`;
-            petal.style.height = `${size}px`;
-            petal.style.left = `${Math.random() * window.innerWidth}px`;
-            petal.style.background = colors[Math.floor(Math.random() * colors.length)];
-            petal.style.animationDuration = `${Math.random() * 10 + 5}s`;
-            petal.style.animationDelay = `${Math.random() * 5}s`;
-            
-            document.body.appendChild(petal);
-            
-            petal.addEventListener('animationend', () => {
-                petal.remove();
-            });
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京云锐企业管理咨询有限公司 - 用友软件授权服务中心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#6B7280',
+                        accent: '#36CFC9',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
         }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.03);
+            }
+            .card-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+            .gradient-overlay {
+                background: linear-gradient(180deg, rgba(22, 93, 255, 0.03) 0%, rgba(22, 93, 255, 0) 100%);
+            }
+        }
+    </style>
+ 
+</head>
+<!-- 优化点 1: body 使用极浅的灰色 bg-gray-50，提供一个柔和的基础背景 -->
+<body class="font-inter text-dark bg-gray-50">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <div class="text-primary text-xl font-bold">
+                        <i class="fa fa-cloud mr-2"></i>云锐咨询
+                    </div>
+                </div>
+                
+                <!-- 右侧导航区域：导航菜单 + 联系电话 -->
+                <div class="flex items-center ml-auto">
+                    <!-- 桌面导航 -->
+                    <nav class="hidden md:flex space-x-6 mr-6">
+                        <a href="#services" class="text-secondary hover:text-primary transition-colors font-medium text-sm">核心业务</a>
+                        <a href="#products" class="text-secondary hover:text-primary transition-colors font-medium text-sm">产品系列</a>
+                        <a href="#contact" class="text-secondary hover:text-primary transition-colors font-medium text-sm">联系我们</a>
+                    </nav>
+                    
+                    <!-- 联系电话 -->
+                    <div class="hidden md:flex items-center">
+                        <i class="fa fa-phone text-primary mr-1"></i>
+                        <span class="font-medium text-sm">180-0119-6175</span>
+                    </div>
+                    
+                    <!-- 移动端菜单按钮 -->
+                    <button id="menu-toggle" class="md:hidden text-dark focus:outline-none ml-4">
+                        <i class="fa fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
         
-        for(let i=0; i<50; i++) {
-            setTimeout(createPetal, i * 300);
-        }</script>
-</p>
-<table width="900" border="0" align="center">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td height="45" class="STYLE12"><div align="center" class="STYLE14">北京云锐企业管理咨询有限公司</div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE15 STYLE11">地址:北京市通州区永顺镇金融街园中园1号院4号楼5层501-009</span></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE17">联系电话：180-0119-6175</span></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE17">微信：bjyrgl999</span></div></td>
-  </tr>
-  
-  <tr>
-    <td><div align="center"><a href="qywx.jpg" target="_blank"><img src="qywx.jpg" width="120" height="120" border="0"></a></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE8">代理北京地区用友软件</span>（销售、实施、培训、维护、维修等业务）</div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE19">Yonyou系列：U8、U9、U8C、NCC、NC、等</span></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE19">Chanjet系列：T+Cloud、T6、G6、T3、T1、好会计、好业财、好生意、易代账、等</span></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE19">金万维系列：快解析、天联SD、天联高级版、云联、等</span></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE19">致远系列：致远协同（OA）</span></div></td>
-  </tr>
-  <tr>
-    <td><div align="center"><span class="STYLE19"></span></div></td>
-  </tr>
-</table>
-<p>&nbsp;</p>
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-2 space-y-2">
+                <a href="#services" class="block py-1 text-secondary hover:text-primary transition-colors font-medium text-sm">核心业务</a>
+                <a href="#products" class="block py-1 text-secondary hover:text-primary transition-colors font-medium text-sm">产品系列</a>
+                <a href="#contact" class="block py-1 text-secondary hover:text-primary transition-colors font-medium text-sm">联系我们</a>
+                <div class="pt-1 border-t border-gray-100">
+                    <div class="flex items-center text-primary">
+                        <i class="fa fa-phone mr-1"></i>
+                        <span class="font-medium text-sm">180-0119-6175</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <!-- 优化点 2: 保留品牌色渐变背景，营造视觉焦点 -->
+    <section class="pt-16 pb-10 md:pt-24 md:pb-16 bg-gradient-to-br from-primary/10 to-primary/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-tight text-dark mb-4">
+                    专注于 <span class="text-primary">企业信息化</span> 解决方案
+                </h1>
+                <p class="text-secondary text-base mb-6 max-w-2xl mx-auto">
+                    北京云锐是用友软件授权服务中心，提供用友全系列产品的销售、实施、培训与维护服务，助力企业数字化转型。
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3">
+                    <a href="#contact" class="btn bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center w-full sm:w-auto text-sm">
+                        立即咨询
+                    </a>
+                    <a href="#services" class="btn bg-white hover:bg-gray-50 text-primary border border-primary font-medium py-2 px-6 rounded-lg transition-all shadow hover:shadow-md text-center w-full sm:w-auto text-sm">
+                        了解服务
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心业务 -->
+    <!-- 优化点 3: 使用纯白色背景，让卡片内容更突出 -->
+    <section id="services" class="py-8 md:py-12 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-[clamp(1.3rem,3vw,1.8rem)] font-bold text-dark mb-3">核心业务</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-secondary max-w-2xl mx-auto text-sm">
+                    我们提供全方位的企业信息化服务，从软件销售到实施培训，从技术支持到定制开发
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <!-- 业务卡片 1 -->
+                <!-- 优化点 4: 卡片使用浅灰色背景和更明显的阴影，增强层次感 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale">
+                    <div class="p-3">
+                        <h3 class="text-lg font-semibold text-dark mb-1">软件销售</h3>
+                        <p class="text-secondary mb-2 text-sm">
+                            提供用友全系列产品的销售服务，包括U8、U9、NC、T+等，根据企业需求推荐最适合的解决方案。
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium text-sm">
+                            <span>咨询详情</span>
+                            <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 业务卡片 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale">
+                    <div class="p-3">
+                        <h3 class="text-lg font-semibold text-dark mb-1">实施服务</h3>
+                        <p class="text-secondary mb-2 text-sm">
+                            专业的实施团队，为企业提供系统安装、数据迁移、流程配置等服务，确保系统顺利上线。
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium text-sm">
+                            <span>咨询详情</span>
+                            <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 业务卡片 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale">
+                    <div class="p-3">
+                        <h3 class="text-lg font-semibold text-dark mb-1">培训服务</h3>
+                        <p class="text-secondary mb-2 text-sm">
+                            提供定制化的培训课程，包括系统操作培训、管理员培训、高级应用培训等，提升用户技能。
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium text-sm">
+                            <span>咨询详情</span>
+                            <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 业务卡片 4 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale">
+                    <div class="p-3">
+                        <h3 class="text-lg font-semibold text-dark mb-1">技术支持</h3>
+                        <p class="text-secondary mb-2 text-sm">
+                            提供7x24小时技术支持服务，包括远程协助、现场服务、问题解答等，保障系统稳定运行。
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium text-sm">
+                            <span>咨询详情</span>
+                            <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 业务卡片 5 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale">
+                    <div class="p-3">
+                        <h3 class="text-lg font-semibold text-dark mb-1">系统维护</h3>
+                        <p class="text-secondary mb-2 text-sm">
+                            提供系统定期维护、数据备份、性能优化等服务，确保系统长期稳定高效运行。
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium text-sm">
+                            <span>咨询详情</span>
+                            <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 业务卡片 6 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale">
+                    <div class="p-3">
+                        <h3 class="text-lg font-semibold text-dark mb-1">定制开发</h3>
+                        <p class="text-secondary mb-2 text-sm">
+                            根据企业特殊需求，提供系统定制开发服务，包括报表定制、接口开发、功能扩展等。
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-primary font-medium text-sm">
+                            <span>咨询详情</span>
+                            <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品系列 -->
+    <!-- 优化点 5: 使用比 body 稍深一点的灰色，与前后的白色区域形成对比 -->
+    <section id="products" class="py-12 md:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.3rem,3vw,1.8rem)] font-bold text-dark mb-3">产品系列</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-5"></div>
+                <p class="text-secondary max-w-2xl mx-auto text-sm">
+                    我们提供用友全系列产品，涵盖从中小企业到大型集团的全方位信息化解决方案
+                </p>
+            </div>
+            
+            <!-- 产品分类标签 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="product-tab active px-4 py-1.5 rounded-full bg-primary text-white font-medium text-sm" data-tab="yonyou">
+                    用友系列
+                </button>
+                <button class="product-tab px-4 py-1.5 rounded-full bg-gray-200 text-secondary font-medium hover:bg-gray-300 text-sm" data-tab="chanjet">
+                    畅捷通系列
+                </button>
+                <button class="product-tab px-4 py-1.5 rounded-full bg-gray-200 text-secondary font-medium hover:bg-gray-300 text-sm" data-tab="jinwanwei">
+                    金万维系列
+                </button>
+                <button class="product-tab px-4 py-1.5 rounded-full bg-gray-200 text-secondary font-medium hover:bg-gray-300 text-sm" data-tab="zhiyuan">
+                    致远系列
+                </button>
+                <button class="product-tab px-4 py-1.5 rounded-full bg-gray-200 text-secondary font-medium hover:bg-gray-300 text-sm" data-tab="other">
+                    其他产品
+                </button>
+            </div>
+            
+            <!-- 用友系列产品 - 补全 -->
+            <div class="product-content active" id="yonyou-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- 产品卡片 1 -->
+                    <!-- 优化点 6: 在灰色背景上，卡片使用纯白色，通过强烈的明暗对比来突出内容 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-primary/90 to-primary flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">U8</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">用友U8</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向中型企业的全面信息化解决方案，涵盖财务、供应链、生产制造、人力资源等领域。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-medium text-xs">适合：中型企业</span>
+                                <a href="#contact" class="text-primary hover:text-primary/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-primary/90 to-primary flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">U9</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">用友U9</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向中大型制造企业的高端ERP解决方案，支持多组织、多工厂、多语种、多币种管理。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-medium text-xs">适合：中大型企业</span>
+                                <a href="#contact" class="text-primary hover:text-primary/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-primary/90 to-primary flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">U8C</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">用友U8C</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向成长型企业的云ERP解决方案，提供财务、供应链、生产、HR等核心应用，按需部署。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-medium text-xs">适合：成长型企业</span>
+                                <a href="#contact" class="text-primary hover:text-primary/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-primary/90 to-primary flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">NCC</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">用友NCC</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向大型集团企业的新一代数字化平台，支持集团管控、产业链协同、全球化运营。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-medium text-xs">适合：大型集团</span>
+                                <a href="#contact" class="text-primary hover:text-primary/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 5 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-primary/90 to-primary flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">NC</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">用友NC</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向大型企业和集团公司的ERP解决方案，提供全面的财务管理、供应链管理、人力资源管理等功能。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-medium text-xs">适合：大型企业</span>
+                                <a href="#contact" class="text-primary hover:text-primary/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 6 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-primary/90 to-primary flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">YonBIP</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">用友YonBIP</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                用友商业创新平台，是面向大型企业的新一代数字化转型平台，支持混合云部署模式。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-medium text-xs">适合：大型企业</span>
+                                <a href="#contact" class="text-primary hover:text-primary/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 畅捷通系列产品 - 补全 -->
+            <div class="product-content hidden" id="chanjet-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- 产品卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-accent/90 to-accent flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">T+Cloud</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">畅捷通T+Cloud</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向小微企业的云ERP解决方案，提供财务、业务、库存一体化管理，随时随地办公。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-accent font-medium text-xs">适合：小微企业</span>
+                                <a href="#contact" class="text-accent hover:text-accent/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 产品卡片 6 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-accent/90 to-accent flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">好会计</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">畅捷通好会计</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向小微企业的云会计软件，自动记账、一键报税、智能分析，随时随地管理财务。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-accent font-medium text-xs">适合：小微企业</span>
+                                <a href="#contact" class="text-accent hover:text-accent/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 7 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-accent/90 to-accent flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">好业财</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">畅捷通好业财</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向小微企业的云进销存软件，支持采购、销售、库存、财务一体化管理，简单高效。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-accent font-medium text-xs">适合：小微企业</span>
+                                <a href="#contact" class="text-accent hover:text-accent/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 金万维系列产品 - 补全 -->
+            <div class="product-content hidden" id="jinwanwei-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- 产品卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-purple-600/90 to-purple-600 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">快解析</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">金万维快解析</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                一款简单易用的动态域名解析工具，帮助用户轻松搭建网站、FTP、VPN等服务器。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-600 font-medium text-xs">适合：各类企业</span>
+                                <a href="#contact" class="text-purple-600 hover:text-purple-600/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-purple-600/90 to-purple-600 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">天联高级版</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">金万维天联高级版</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                一款专业的远程接入解决方案，支持多人同时访问，安全稳定，提升企业办公效率。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-600 font-medium text-xs">适合：中小企业</span>
+                                <a href="#contact" class="text-purple-600 hover:text-purple-600/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-purple-600/90 to-purple-600 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">安恒明御</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">安恒明御终端安全管理系统</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                一款全面的终端安全防护软件，支持病毒查杀、漏洞修复、数据加密等功能，保障企业信息安全。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-600 font-medium text-xs">适合：各类企业</span>
+                                <a href="#contact" class="text-purple-600 hover:text-purple-600/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 致远系列产品 - 补全 -->
+            <div class="product-content hidden" id="zhiyuan-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- 产品卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-orange-500/90 to-orange-500 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">A8</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">致远A8</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向中大型企业的高端协同管理平台，支持复杂流程管理、集团化管控、个性化定制。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-orange-500 font-medium text-xs">适合：中大型企业</span>
+                                <a href="#contact" class="text-orange-500 hover:text-orange-500/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-orange-500/90 to-orange-500 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">A6</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">致远A6</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向中小企业的协同管理平台，功能实用、操作简单，支持流程审批、文档管理、移动办公。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-orange-500 font-medium text-xs">适合：中小企业</span>
+                                <a href="#contact" class="text-orange-500 hover:text-orange-500/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-orange-500/90 to-orange-500 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">M3</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">致远M3移动协同</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                一款专为移动办公设计的协同管理软件，支持随时随地处理工作、查看通知、审批流程。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-orange-500 font-medium text-xs">适合：各类企业</span>
+                                <a href="#contact" class="text-orange-500 hover:text-orange-500/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 其他产品系列 - 补全 -->
+            <div class="product-content hidden" id="other-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <!-- 产品卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-green-600/90 to-green-600 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">CRM</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">客户关系管理系统</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                帮助企业管理客户信息、销售过程、市场营销活动，提升客户满意度和忠诚度。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-green-600 font-medium text-xs">适合：有销售团队的企业</span>
+                                <a href="#contact" class="text-green-600 hover:text-green-600/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-green-600/90 to-green-600 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">MES</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">制造执行系统</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                面向制造企业的生产管理系统，支持生产计划、调度、质量控制、设备管理等功能。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-green-600 font-medium text-xs">适合：制造企业</span>
+                                <a href="#contact" class="text-green-600 hover:text-green-600/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-scale">
+                        <div class="h-32 bg-gradient-to-r from-green-600/90 to-green-600 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">OA</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-dark mb-2">OA协同管理系统</h3>
+                            <p class="text-secondary mb-3 text-sm">
+                                一款集办公自动化、流程管理、知识管理、移动办公于一体的企业级管理平台。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-green-600 font-medium text-xs">适合：各类企业</span>
+                                <a href="#contact" class="text-green-600 hover:text-green-600/80">
+                                    <i class="fa fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <!-- 优化点 7: 回归纯白色背景，给用户一个清晰、专注的收尾区域 -->
+    <section id="contact" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.3rem,3vw,1.8rem)] font-bold text-dark mb-3">联系我们</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-5"></div>
+                <p class="text-secondary max-w-2xl mx-auto text-sm">
+                    无论您有任何问题或需求，都可以通过以下方式联系我们，我们将竭诚为您服务
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- 联系卡片 1 -->
+                <!-- 优化点 8: 联系卡片使用浅灰色，与白色背景形成柔和对比 -->
+                <div class="bg-gray-50 rounded-xl p-4 shadow-md">
+                    <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-map-marker text-primary text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">公司地址</h3>
+                    <p class="text-secondary text-sm">
+                        北京市通州区永顺镇金融街园中园1号院4号楼5层501-009
+                    </p>
+                </div>
+                
+                <!-- 联系卡片 2 -->
+                <div class="bg-gray-50 rounded-xl p-4 shadow-md">
+                    <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-phone text-primary text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">联系电话</h3>
+                    <p class="text-secondary mb-3 text-sm">
+                        180-0119-6175
+                    </p>
+                </div>
+                
+                <!-- 联系卡片 3 -->
+                <div class="bg-gray-50 rounded-xl p-4 shadow-md">
+                    <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-envelope text-primary text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">电子邮箱</h3>
+                    <p class="text-secondary text-sm">
+                        contact@bjyrgl.com
+                    </p>
+                </div>
+                
+                <!-- 联系卡片 4 -->
+                <div class="bg-gray-50 rounded-xl p-4 shadow-md">
+                    <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-weixin text-primary text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">微信号</h3>
+                    <p class="text-secondary text-sm">
+                        bjyrgl999
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <!-- 优化点 9: 页脚使用深色背景，与浅色的内容区形成强烈对比，标志着页面的结束 -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-400 text-xs">
+                <p>© 2025 北京云锐企业管理咨询有限公司. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white p-2 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up text-sm"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('back-to-top');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-3');
+                
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                navbar.classList.remove('py-2', 'shadow');
+                navbar.classList.add('py-3');
+                
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // 返回顶部
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 产品标签切换
+        document.querySelectorAll('.product-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // 更新标签样式
+                document.querySelectorAll('.product-tab').forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-secondary');
+                });
+                
+                this.classList.add('active', 'bg-primary', 'text-white');
+                this.classList.remove('bg-gray-200', 'text-secondary');
+                
+                // 更新内容显示
+                document.querySelectorAll('.product-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                document.getElementById(`${tabId}-content`).classList.remove('hidden');
+            });
+        });
+    </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"d22d6a98dbac454a9117c01418b86160","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
